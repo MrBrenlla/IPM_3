@@ -4,10 +4,10 @@ Repositorio de la práctica 3 de IPM, curso 20/21.
 
 ## Miembros del grupo
 
-  * Nombre:
-  * Apellidos:
-  * Login UDC:
-  * Login Github:
+  * Nombre: Yago
+  * Apellidos: Mira Urdampilleta
+  * Login UDC: yago.mira
+  * Login Github: YagoMira
   
   * Nombre:
   * Apellidos:
