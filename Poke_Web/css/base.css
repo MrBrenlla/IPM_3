@@ -1,0 +1,455 @@
+/*This css file includes general position changes and applies changes to multiple platforms in visual and position: (mobile, desktop, tablet,...)*/
+
+* {
+    box-sizing: border-box;
+}
+
+
+[class*="row-"]::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+[class*="col_a-"] {
+    float: left;
+    padding: 15px;
+}
+
+[class*="col-"] {
+    float: right;
+    padding: 15px;
+}
+
+
+/* For mobile phones: */
+[class*="col-"] {
+    width: 100%;
+}
+
+
+.row-1 {
+    float: left;
+    margin: 15px;
+    padding: 15px;
+    background-color: #ffc785;
+    border: 2px solid red;
+    border-radius: 8px;
+    border-style: double;
+}
+
+.row-1_b {
+    margin: 15px;
+    padding: 15px;
+    background-color: #ffc785;
+    border: 2px solid red;
+    border-radius: 8px;
+    border-style: double;
+}
+
+.row-3 {
+    float: inherit;
+    margin: 15px;
+    padding: 15px;
+    background-color: #ffc785;
+    border: 2px solid red;
+    border-radius: 8px;
+    border-style: double;
+}
+
+.all_rows {
+    margin: 15px;
+    padding: 15px;
+    background-color: #ffc785;
+    border: 2px solid red;
+    border-radius: 8px;
+    border-style: double;
+}
+
+
+/*Less than tablet but more than smartphone*/
+@media (min-width: 530px) and (max-width: 749px) {
+    .pokelogo {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 95%;
+    }
+}
+
+@media (min-width: 550px) {
+    .pokemon_value {
+        font-size: 14pt;
+    }
+
+    .pokemon_value_search {
+        font-size: 14pt;
+    }
+
+    .pokemon_value_cancel {
+        font-size: 14pt;
+    }
+}
+
+@media (max-width: 550px) {
+    .pokemon_value {
+        font-size: 8pt;
+    }
+
+    .pokemon_value_search {
+        font-size: 8pt;
+    }
+
+    .pokemon_value_cancel {
+        font-size: 8pt;
+    }
+}
+
+@media (min-width: 100px) and (max-width: 600px) {
+
+    .oak_advice {
+        font-size: 72%;
+        color: black;
+    }
+}
+
+
+
+@media (min-width: 700px) {
+    .pokemon_value_search {
+        font-size: 14pt;
+    }
+
+    .pokemon_value_cancel {
+        font-size: 14pt;
+    }
+}
+
+
+
+@media (max-width: 700px) {
+
+    .pokemon_value_search {
+        font-size: 7pt;
+    }
+
+    .pokemon_value_cancel {
+        font-size: 7pt;
+    }
+}
+
+@media (min-width: 1000px) {
+    .pokemon_value {
+        font-size: 23pt;
+    }
+    .pokemon_value_search {
+        font-size: 23pt;
+    }
+
+    .pokemon_value_cancel {
+        font-size: 23pt;
+    }
+}
+
+@media (min-width: 1200px) {
+    .button {
+        padding: 12px 32px;
+    }
+}
+
+
+
+
+/* For tablets: */
+@media (min-width: 600px) {
+
+    .oak_advice {
+        font-size: 75%;
+        color: black;
+    }
+
+    .row-1 {
+        float: left;
+        padding: 15px;
+        background-image: url(../images/wallpaper_poke.jpg);
+        background-repeat: repeat;
+        background-size: 75%;
+    }
+
+    .row-1_b {
+        padding: 15px;
+        background-image: url(../images/wallpaper_poke.jpg);
+        background-repeat: repeat;
+        background-size: 75%;
+    }
+
+    .all_rows {
+        background-image: url(../images/wallpaper_poke.jpg);
+        background-repeat: repeat;
+        background-size: 75%;
+    }
+
+
+    .row-3 {
+        background-image: url(../images/wallpaper_poke.jpg);
+        background-repeat: repeat;
+        background-size: 75%;
+    }
+
+    .col-s-1 {
+        width: 8.33%;
+    }
+
+    .col-s-2 {
+        width: 16.66%;
+    }
+
+    .col-s-3 {
+        width: 25%;
+    }
+
+    .col-s-4 {
+        width: 33.33%;
+    }
+
+    .col-s-5 {
+        width: 41.66%;
+    }
+
+    .col-s-6 {
+        width: 50%;
+    }
+
+    .col-s-7 {
+        width: 58.33%;
+    }
+
+    .col-s-8 {
+        width: 66.66%;
+    }
+
+    .col-s-9 {
+        width: 75%;
+    }
+
+    .col-s-10 {
+        width: 83.33%;
+    }
+
+    .col-s-11 {
+        width: 91.66%;
+    }
+
+   
+
+    .header {
+        background-position: right;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        color: #ffffff;
+        padding: 15px;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 2500px) {
+    .col-s-12 {
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .header {
+        background-image: url(../images/poke_banner_onlycolor.jpg);
+        background-position: right;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        color: #ffffff;
+        padding: 15px;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 750px) {
+
+    .header {
+        background-image: url(../images/poke_banner_onlycolor.jpg);
+        background-position: right;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        color: #ffffff;
+        padding: 15px;
+    }
+}
+
+/* For other devices*/
+@media (min-width: 1700px) and (max-width: 1800px) {
+
+    .text_container_search_button {
+        margin-top: 39%;
+        margin-left: 54%;
+    }
+
+    .text_container_cancel_button {
+        padding-top: 39%;
+        margin-left: 69%;
+    }
+
+    .pokemon_value_search {
+        font-size: 19pt;
+    }
+
+    .pokemon_value_cancel {
+        font-size: 19pt;
+    }
+}
+
+@media (max-width: 1700px) {
+    .text_container_search_button {
+        margin-top: 44%;
+        margin-left: 56%;
+    }
+
+    .text_container_cancel_button {
+        padding-top: 44%;
+        margin-left: 71%;
+    }
+}
+
+
+
+@media (min-width: 1350px) and (max-width: 1800px) {
+
+    .row-1 {
+        width: 98%;
+    }
+
+    .row-1_b {
+        width: 98%;
+    }
+
+    .oak_advice {
+        font-size: 25px;
+        color: black;
+    }
+}
+
+@media (min-width: 750px) {
+    .header {
+        /*background-color: #9933cc;*/
+        background-image: url(../images/poke_banner.jpg);
+    }
+
+}
+
+@media (min-width: 600px) {
+    .row-1_b {
+        float: left;
+    }
+}
+
+/* For desktop: */
+@media (min-width: 750px) and (max-width: 1050px) {
+
+    .header {
+        /*background-color: #9933cc;*/
+        background-image: url(../images/poke_banner.jpg);
+    }
+
+    .col-1 {
+        width: 8.33%;
+    }
+
+    .col-2 {
+        width: 16.66%;
+    }
+
+    .col-3 {
+        width: 100%;
+    }
+
+    .col-3_b {
+        width: 100%;
+    }
+
+    .col-4 {
+        width: 33.33%;
+    }
+
+    .col-5 {
+        width: 41.66%;
+    }
+
+    .col-6 {
+        width: 50%;
+    }
+
+    .col-7 {
+        width: 58.33%;
+    }
+
+    .col-8 {
+        width: 66.66%;
+    }
+
+    .col-9 {
+        width: 75%;
+    }
+
+    .col-10 {
+        width: 83.33%;
+    }
+
+    .col-11 {
+        width: 91.66%;
+    }
+
+    .col-12 {
+        width: 100%;
+    }
+}
+
+@media (min-width: 1800px) {
+
+    .col-3_b {
+        width: 92%;
+        margin-right: 3%;
+        padding-top: 7%;
+    }
+
+
+    .oak_advice {
+        font-size: 25px;
+        color: black;
+    }
+
+    .text_container_search_button {
+        margin-top: 43%;
+        margin-left: 56%;
+    }
+
+    .text_container_cancel_button {
+        padding-top: 43%;
+        margin-left: 70%;
+    }
+
+    .pokemon_value_search {
+        font-size: 19pt;
+    }
+
+    .pokemon_value_cancel {
+        font-size: 19pt;
+    }
+}
+
+
+@media (min-width: 1800px) and (max-width: 2500px) {
+    .col-3 {
+        width: 33%;
+        margin-right: 3%;
+        padding-top: 12%;
+    }
+
+    .row-1 {
+        width: 60%;
+    }
+}

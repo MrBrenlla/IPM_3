@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PokeWeb!</title>
+
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!--JS-->
+    <script src="js/main.js"></script>
+
+
+    <div class="header">
+        <img class="pokelogo" src="images/pokeweb_logo.png" style="max-width:100%;height:auto;" alt="Pokemon Logo" />
+    </div>
+
+    <div class="navigation_bar">
+        <ul>
+            <li><a class="active" href="index.html">Home</a></li>
+            <li><a href="catalogo.html">Catalogo</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </div>
+
+    <!--Introduction text for user-->
+    <div class="intro" id="intro_text">
+        <h2><img src="images/poke_icon_01.png" alt="Pokemon icon"/>Bienvenido a PokeWeb!</h2>
+        <h3>Si quieres realizar tu búsqueda solo tienes que introducir el número/nombre del pokemón en la pokédex! ¡Asegúrate de escribirlo correctamente!</h3>
+    </div>
+    <div class="row-1">
+        <h1>POKÉDEX</h1>
+        <div class="pokedex">
+            <form action="pokemon.html" method="GET">
+                <div class="text_container">
+                    <input class="pokemon_value" type="text" id="pokemon_name" name="poke_name" required
+                     minlength="1" maxlength="20" size="15" placeholder="Poke Name...">
+                </div>
+                <div class="text_container_search_button">
+                    <input class="button pokemon_value_search" type="submit" value="Buscar" />
+                </div>
+                <div class="text_container_cancel_button">
+                    <button class="button pokemon_value_cancel" onclick="document.getElementById('pokemon_name').value = ''">Cancelar</button>
+                </div>
+            </form>
+            <img src="images/pokedex.gif" style="max-width:80%;height:auto;" alt="Pokedex Image" />
+            <p style="color:black;">¿No encuentas tú pokemón? - Clicka <a href="catalogo.html">aquí</a> para ir al catálogo</p>
+        </div>
+    </div>
+
+
+    <!--List of recommended pokemon-->
+    <div class="row-2">
+
+        <div class="col-3 col-s-12">
+            <img src="images/recomendados.png" style="height:auto;max-width:450px;" alt="Imagen Poke-Recomendados"/>
+            <div class="aside" id="recommended_poke"></div>
+        </div>
+    </div>
+
+    <!--List of Oak advices-->
+    <div class="row-3">
+        <h2>Consejos del profesor OAK</h2>
+
+        <div class="oak">
+            <div style="background-color:white;width:50%;height:30px;transform: translate(50%, 130%);">
+                <p class="oak_advice" id="oak_adv"> Aprovecha la características de intercambio de Pokémon con otros entrenadores.</p>
+            </div>
+            <img src="images/oak.png" style="max-width:7%;height:auto;margin-top:15px;position: relative;left: 90%;" alt="Imagen Profesor Oak" />
+        </div>
+    </div>
+
+
+    <div class="footer">
+        <p>PokeWeb! - 2020 - All Rights Reserved</p>
+    </div>
+</body>
+</html>

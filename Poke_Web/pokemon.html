@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PokeWeb!</title>
+
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!--JS-->
+    <script src="js/main.js"></script>
+    <script src="js/secondary.js"></script>
+
+    <div class="header">
+        <img class="pokelogo" src="images/pokeweb_logo.png" style="max-width:100%;height:auto;" alt="Pokemon Logo" />
+    </div>
+
+    <div class="navigation_bar">
+        <ul>
+            <li><a class="active" href="index.html">Home</a></li>
+            <li><a href="catalogo.html">Catalogo</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </div>
+
+    <div class="row-1_b">
+        <h1>POK&Eacute;DEX</h1>
+        <div class="pokedex">
+            <div class="pokemon_details" id="poke_details">
+                <h1 style="color:black;" id="pokeName">PokeName</h1>
+                <div class="pokemon_values" id="poke_values">
+                    <div class="pokemon_sprite" id="poke_sprite"></div>
+                    <div class="pokemon_stats" id="poke_stats"></div>
+                </div>
+            </div>
+            <div class="pokemon_moves" id="poke_moves"></div>
+            <div style="color: black;display: inline !important;">
+                <img src="images/pokeball_icon.png" style="max-width:7%;height:auto;margin-top:5%;position: relative;" alt="Pokemon Pokeball" />
+                <h3>Pokemon Moves</h3>
+                <div id="pokemon_moves_list" class="poke_moves_list">
+                </div>
+            </div>
+            <div class="pokemon_games" id="poke_games">
+                <div style="color: black;display: inline !important;">
+                    <img src="images/pokemon_icon.png" style="max-width:7%;height:auto;margin-top:5%;position: relative;" alt="Pokemon Icon" />
+                    <h3>Pokemon Games</h3>
+                    <div id="pokemon_games_list" class="poke_games_list">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--List of recommended pokemon-->
+    <div class="row-2">
+
+        <div class="col-3_b col-s-12">
+            <img src="images/recomendados.png" style="height:auto;max-width:450px;" alt="Pokemon Recomendados" />
+            <div class="aside" id="recommended_poke"></div>
+        </div>
+    </div>
+
+    <!--List of Oak advices-->
+    <div class="row-3">
+        <h2>Consejos del profesor OAK</h2>
+
+        <div class="oak">
+            <div style="background-color:white;width:50%;height:30px;transform: translate(50%, 130%);">
+                <p class="oak_advice" id="oak_adv"> Aprovecha la caracter&iacute;sticas de intercambio de Pok&eacute;mon con otros entrenadores.</p>
+            </div>
+            <img src="images/oak.png" style="max-width:7%;height:auto;margin-top:15px;position: relative;left: 90%;" alt="Imagen Profesor Oak" />
+        </div>
+    </div>
+
+
+    <div class="footer">
+        <p>PokeWeb! - 2020 - All Rights Reserved</p>
+    </div>
+</body>
+</html>
