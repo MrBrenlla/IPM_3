@@ -112,6 +112,7 @@ li a:hover {
     border: 2px solid red;
     border-radius: 8px;
     border-style: double;
+	font-size: 75%;
 }
 
 /* Body of Website - Secondary*/
