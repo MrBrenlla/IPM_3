@@ -49,9 +49,11 @@ async function getPokemon_All(pokemonCount, pokeGames) {
             pokemonGame_pic.setAttribute('class', "pokeGame_pic");
             pokemonGame_pic.setAttribute('id', "pokeGame_pic_" + pokeGames[i].version.name);
             pokemonGame_pic.setAttribute('style', 'display: none;');
+			pokemonGame_pic.setAttribute('alt', 'pokemon ' + pokeGames[i].version.name);
             pokemonGame_div.setAttribute('id', pokeGames[i].version.name);
             pokemonGame_div.setAttribute('class', pokeGames[i].version.name);
             pokemonGame_div.setAttribute('style', 'margin-top: 25px;display: none;');
+			
 
             document.getElementById('catalogo').appendChild(pokemonGame_pic);
             document.getElementById('catalogo').appendChild(pokemonGame_div);
@@ -77,7 +79,7 @@ async function getPokemon_All(pokemonCount, pokeGames) {
                     return response.json();
                 })
                 .then(function (myJson) {
-                    addPokemon_Sprite(myJson.sprites.front_default, myJson.game_indices, myJson.id);
+                    addPokemon_Sprite(myJson.sprites.front_default, myJson.game_indices, myJson.id, myJson.name);
                 })
                 .catch(function (error) {
                     console.log("Error: " + error);
@@ -116,7 +118,7 @@ async function getPokemon_Games(pokemonCount) {
 }
 
 //Add sprite current pokemon to website
-async function addPokemon_Sprite(image, games, currentPokemon) {
+async function addPokemon_Sprite(image, games, currentPokemon, name) {
 
     var sprite;
     var link;
@@ -134,6 +136,7 @@ async function addPokemon_Sprite(image, games, currentPokemon) {
                     sprite.src = image.toString();
                     sprite.setAttribute("class", "pokemon_sprite_catalogo" + currentPokemon);
                     sprite.setAttribute("id", "pokemon_" + game2 +"_"+ currentPokemon);
+					sprite.setAttribute("alt", name);
                     sprite.setAttribute("style", "border: 2px solid red;border-radius: 2px;border-style: simple;");
                     document.getElementById(games[game2].version.name).appendChild(link);
                     document.getElementById(game2 + " " + currentPokemon).appendChild(sprite);
@@ -175,6 +178,7 @@ async function addPokemon_Games(games) {
         game_field.src = checkPokemonGame_Name(games[i].version.name.toString());
         game_field.setAttribute("id", "poke_game" + i.toString());
         game_field.setAttribute("class", "pokemon_game");
+		pokemonGame_pic.setAttribute('alt', 'pokemon ' + games[i].version.name);
 
         document.getElementById('game_separator' + extra_counter).appendChild(game_field);
     }
@@ -205,7 +209,7 @@ async function getPokemon_Recommended(pokemons) {
                 return response.json();
             })
             .then(function (myJson) {
-                addRecommendedPokemon_Sprite(myJson.sprites.front_default, myJson.id);
+                addRecommendedPokemon_Sprite(myJson.sprites.front_default, myJson.id, myJson.name);
             })
             .catch(function (error) {
                 console.log("Error: " + error);
@@ -214,7 +218,7 @@ async function getPokemon_Recommended(pokemons) {
 }
 
 //From the random pokemon, get the sprite and place in the website
-async function addRecommendedPokemon_Sprite(image, pokeId) {
+async function addRecommendedPokemon_Sprite(image, pokeId,name) {
     var img = document.createElement('img');
     var link = document.createElement('a');
 
@@ -223,6 +227,7 @@ async function addRecommendedPokemon_Sprite(image, pokeId) {
     img.src = image.toString();
     img.setAttribute("class", "poke_recom_sprite_img");
     img.setAttribute("style", "border: 7px solid red;border-radius: 8px;border-style: double;");
+	img.setAttribute("alt", name);
     document.getElementById('recommended_poke').appendChild(link);
     document.getElementById("image_" + pokeId).appendChild(img);
 }

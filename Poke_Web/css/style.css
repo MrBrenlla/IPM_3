@@ -17,7 +17,7 @@ h1, h2 {
     font-family: 'Exo', sans-serif;
     color: #7189bf;
     font-weight: bold;
-    text-shadow: 2px 2px #ff0000;
+    text-shadow: 2px 2px #DF7599;
 }
 
 li,a {
@@ -43,7 +43,7 @@ h3,p {
 }
 
 .footer {
-    background-color: #0099cc;
+    background-color: #72D6C9;
     color: #ffffff;
     text-align: center;
     font-size: 12px;
@@ -59,7 +59,7 @@ h3,p {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #7189bf;
+    background-color: #7189BF;
 }
 
 .navigation_bar li {

@@ -31,7 +31,7 @@ async function getPokemon_Info(pokemon) {
         })
         .then(function (myJson) {
             document.querySelector("#pokeName").innerHTML = myJson.name.toString().toUpperCase() + "  /  " + myJson.id;
-            addPokemon_Sprite(myJson.sprites.front_default);
+            addPokemon_Sprite(myJson.sprites.front_default,myJson.name);
             addPokemon_Stats(myJson.stats);
             addPokemon_Types(myJson.types);
             addPokemon_Games(myJson.game_indices);
@@ -43,11 +43,12 @@ async function getPokemon_Info(pokemon) {
 }
 
 //Add current pokemon sprite to the web
-async function addPokemon_Sprite(image) {
+async function addPokemon_Sprite(image,name) {
     var img = document.createElement('img');
     img.src = image.toString();
     img.setAttribute("class", "pokemon_sprite_img");
     img.setAttribute("style", "border: 7px solid red;border-radius: 8px;border-style: double;");
+	img.setAttribute("alt", name);
     document.getElementById('poke_sprite').appendChild(img);
 }
 
@@ -66,11 +67,11 @@ async function addPokemon_Stats(stats) {
         stat_field.setAttribute("id", "poke_stat" + i.toString());
         stat_bar.innerHTML = stats[i].base_stat.toString();
         stat_bar.setAttribute("class", "skills");
-        if (parseInt(stats[i].base_stat) <= 100)
-            stat_bar.setAttribute("style", "width: " + stats[i].base_stat.toString() + '%');
+        if (parseInt(stats[i].base_stat) < 100)
+            stat_bar.setAttribute("style", "width: " + stats[i].base_stat.toString() + '%; background-color: #72D6C9');
         else
         {
-            stat_bar.setAttribute("style", "width: " + '100' + '%;background-color: #B20000');
+            stat_bar.setAttribute("style", "width: " + '100' + '%;background-color: #FFC785');
         }
             
         document.getElementById('poke_stats').appendChild(stat_field);
@@ -149,6 +150,7 @@ async function addPokemon_Games(games) {
         game_field.src = checkPokemonGame_Name(games[i].version.name.toString());
         game_field.setAttribute("id", "poke_game" + i.toString());
         game_field.setAttribute("class", "pokemon_game");
+		game_field.setAttribute("alt", "pokemon " + games[i].version.name);
 
         document.getElementById('game_separator' + extra_counter).appendChild(game_field);
     }
