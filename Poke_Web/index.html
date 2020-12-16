@@ -20,9 +20,9 @@
 
     <div class="navigation_bar" role="menubar">
         <ul>
-            <li role="menuitem"><a role="link" class="active" href="index.html">Inicio</a></li>
-            <li role="menuitem"><a role="link" href="catalogo.html">Catalogo</a></li>
-            <li role="menuitem" lang="en"><a role="link" href="about.html">About</a></li>
+            <li role="menuitem"><a class="active" href="index.html">Inicio</a></li>
+            <li role="menuitem"><a href="catalogo.html">Catalogo</a></li>
+            <li role="menuitem" lang="en"><a href="about.html">About</a></li>
         </ul>
     </div>
 
@@ -31,13 +31,13 @@
         <h2><img src="images/poke_icon_01.png"/>Bienvenido a PokeWeb!</h2>
         <h3>Si quieres realizar tu búsqueda solo tienes que introducir el número/nombre del pokemón en la pokédex! ¡Asegúrate de escribirlo correctamente!</h3>
     </div>
-    <section class="row-1" title="Pokedex"">
+    <div role="main" class="row-1" title="Busqueda de pokemons">
         <h1>POKÉDEX</h1>
         <div class="pokedex">
             <form action="pokemon.html" method="GET">
-                <div role="main" class="text_container" title="Escriba o pokemon a buscar">
+                <div  class="text_container" >
                     <input role="textbox" class="pokemon_value" type="text" id="pokemon_name" name="pokename" required
-                     minlength="1" maxlength="20" size="15" placeholder="Poke Name..." title="Escriba o pokemon a buscar">
+                     minlength="1" maxlength="20" size="15" placeholder="Poke Name..." title="Escriba el pokemon a buscar">
                 </div>
                 <div class="text_container_search_button">
                     <input role="button" class="button pokemon_value_search" type="submit" value="Buscar" />
@@ -47,22 +47,21 @@
                 </div>
             </form>
             <img src="images/pokedex.gif" style="max-width:80%;height:auto;" />
-            <p style="color:black;">¿No encuentas tú pokemón? - <a role="link" href="catalogo.html">Clicka aquí para ir al catálogo</a></p>
+            <p style="color:black;">¿No encuentas tú pokemón? - <a href="catalogo.html">Clicka aquí para ir al catálogo</a></p>
         </div>
-    </section>
+    </div>
 
 
     <!--List of recommended pokemon-->
-    <section class="row-2" Title="Poke-Recomendados">
-
+    <div role="complementary" class="row-2" >
         <div class="col-3 col-s-12">
-            <img src="images/recomendados.png" style="height:auto;max-width:450px;" alt="Poke-Recomendados"/>
+            <img src="images/recomendados.png" style="height:auto;max-width:100%;" alt="Poke-Recomendados"/>
             <div class="aside" id="recommended_poke"></div>
         </div>
-    </section>
+    </div>
 
     <!--List of Oak advices-->
-    <section class="row-3" title="Consejos">
+    <div role="complementary" class="row-3">
         <h2>Consejos del profesor OAK</h2>
 
         <div class="oak">
@@ -71,7 +70,7 @@
             </div>
             <img src="images/oak.png" style="max-width:14%;height:auto;margin-top:15px;position: relative;left: 80%;" />
         </div>
-    </section>
+    </div>
 
 
     <div class="footer">

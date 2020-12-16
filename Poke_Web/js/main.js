@@ -49,11 +49,11 @@ async function getPokemon_All(pokemonCount, pokeGames) {
             pokemonGame_pic.setAttribute('class', "pokeGame_pic");
             pokemonGame_pic.setAttribute('id', "pokeGame_pic_" + pokeGames[i].version.name);
             pokemonGame_pic.setAttribute('style', 'display: none;');
-			pokemonGame_pic.setAttribute('alt', 'pokemon ' + pokeGames[i].version.name);
+			pokemonGame_pic.setAttribute('alt', 'Pokemons de pokemon edición '+pokeGames[i].version.name);
             pokemonGame_sec.setAttribute('id', pokeGames[i].version.name);
             pokemonGame_sec.setAttribute('class', pokeGames[i].version.name);
             pokemonGame_sec.setAttribute('style', 'margin-top: 25px;display: none;');
-			pokemonGame_sec.setAttribute('title', 'Pokemons de pokemon edición '+pokeGames[i].version.name);
+			
 			
 
             document.getElementById('catalogo').appendChild(pokemonGame_pic);
