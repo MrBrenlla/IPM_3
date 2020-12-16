@@ -42,7 +42,7 @@ async function getPokemon_All(pokemonCount, pokeGames) {
     if (currentHtml != "pokemon")
     {
         for (i = 0; i < pokeGames.length; i++) {
-            pokemonGame_div = document.createElement('div');
+            pokemonGame_sec = document.createElement('section');
             pokemonGame_pic = document.createElement('img');
             pokemonGame_pic.src = "images/" + pokeGames[i].version.name + ".png";
             pokemonGame_pic.setAttribute('style', 'margin-top: 25px;');
@@ -50,13 +50,14 @@ async function getPokemon_All(pokemonCount, pokeGames) {
             pokemonGame_pic.setAttribute('id', "pokeGame_pic_" + pokeGames[i].version.name);
             pokemonGame_pic.setAttribute('style', 'display: none;');
 			pokemonGame_pic.setAttribute('alt', 'pokemon ' + pokeGames[i].version.name);
-            pokemonGame_div.setAttribute('id', pokeGames[i].version.name);
-            pokemonGame_div.setAttribute('class', pokeGames[i].version.name);
-            pokemonGame_div.setAttribute('style', 'margin-top: 25px;display: none;');
+            pokemonGame_sec.setAttribute('id', pokeGames[i].version.name);
+            pokemonGame_sec.setAttribute('class', pokeGames[i].version.name);
+            pokemonGame_sec.setAttribute('style', 'margin-top: 25px;display: none;');
+			pokemonGame_sec.setAttribute('title', 'Pokemons de pokemon edición '+pokeGames[i].version.name);
 			
 
             document.getElementById('catalogo').appendChild(pokemonGame_pic);
-            document.getElementById('catalogo').appendChild(pokemonGame_div);
+            document.getElementById('catalogo').appendChild(pokemonGame_sec);
         }
 
         //Calls for all pokemon in the pokedex to get for him the sprite

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PokeWeb!</title>
+    <title>PokeWeb!-Descripción</title>
 
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/style.css">
@@ -15,14 +15,14 @@
     <script src="js/secondary.js"></script>
 
     <div class="header">
-        <img class="pokelogo" src="images/pokeweb_logo.png" style="max-width:100%;height:auto;" alt="PokeLogo" />
+        <img class="pokelogo" alt="PokeWeb!" src="images/pokeweb_logo.png" style="max-width:100%;height:auto;"  />
     </div>
 
-    <div class="navigation_bar">
+    <div class="navigation_bar" role="menubar">
         <ul>
-            <li><a class="active" href="index.html">Home</a></li>
-            <li><a href="catalogo.html">Catalogo</a></li>
-            <li><a href="about.html">About</a></li>
+            <li role="menuitem"><a role="link" class="active" href="index.html">Inicio</a></li>
+            <li role="menuitem"><a role="link" href="catalogo.html">Catalogo</a></li>
+            <li role="menuitem" lang="en"><a role="link" href="about.html">About</a></li>
         </ul>
     </div>
 
@@ -38,15 +38,15 @@
             </div>
             <div class="pokemon_moves" id="poke_moves"></div>
             <div style="color: black;display: inline !important;">
-                <img src="images/pokeball_icon.png" style="max-width:7%;height:auto;margin-top:5%;position: relative;" alt="Pokemon Pokeball" />
-                <h3>Pokemon Moves</h3>
+                <img src="images/pokeball_icon.png" style="max-width:7%;height:auto;margin-top:5%;position: relative;" />
+                <h2>Pokemon Moves</h2>
                 <div id="pokemon_moves_list" class="poke_moves_list">
                 </div>
             </div>
             <div class="pokemon_games" id="poke_games">
                 <div style="color: black;display: inline !important;">
-                    <img src="images/pokemon_icon.png" style="max-width:7%;height:auto;margin-top:5%;position: relative;" alt="Pokemon Icon" />
-                    <h3>Pokemon Games</h3>
+                    <img src="images/pokemon_icon.png" style="max-width:7%;height:auto;margin-top:5%;position: relative;" />
+                    <h2>Pokemon Games</h2>
                     <div id="pokemon_games_list" class="poke_games_list">
                     </div>
                 </div>
@@ -65,13 +65,13 @@
 
     <!--List of Oak advices-->
     <div class="row-3">
-        <h2>Consejos del profesor OAK</h2>
+        <h1>Consejos del profesor OAK</h1>
 
         <div class="oak">
             <div style="background-color:white;width:50%;height:100%;transform: translate(50%, 20%);">
                 <p class="oak_advice" id="oak_adv"> Aprovecha la características de intercambio de Pokémon con otros entrenadores.</p>
             </div>
-            <img src="images/oak.png" style="max-width:14%;height:auto;margin-top:15px;position: relative;left: 80%;" alt="Imagen Profesor Oak" />
+            <img src="images/oak.png" style="max-width:14%;height:auto;margin-top:15px;position: relative;left: 80%;" />
         </div>
     </div>
 
