@@ -134,13 +134,13 @@
 
 @media (max-width: 400px) {
     .text_container_search_button {
-        width: 13%;
+        width: 10%;
     }
 }
 
 @media (min-width:400px) and (max-width: 550px) {
     .text_container_search_button {
-        width: 14%;
+        width: 13%;
     }
 
     .pokemon_value {

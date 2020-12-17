@@ -80,18 +80,18 @@ async function addPokemon_Stats(stats) {
 
 }
 
+//<img class="pokelogo" alt="PokeWeb!" src="images/pokeweb_logo.png" style="max-width:100%;height:auto;"  />
 //Get current pokemon types from actual pokemon
 async function addPokemon_Types(types) {
 
     var type_field;
 
     for (i = 0; i < types.length; i++) {
-        type_field = document.createElement('div');
-
-        type_field.innerHTML = types[i].type.name.toString().toUpperCase();
+        type_field = document.createElement('img');
         type_field.setAttribute("id", "poke_type" + i.toString());
-        type_field.setAttribute("class", "pokemon_type");
-
+        type_field.setAttribute("src", "tipos/"+types[i].type.name+".gif");
+		type_field.setAttribute("alt", types[i].type.name);
+		
         document.getElementById('poke_sprite').appendChild(type_field);
     }
 
