@@ -27,7 +27,6 @@ li,a {
 
 h3,p{
 	font-family: 'Volkhov', sans-serif;
-	text-align:center;
 }
 
 
@@ -211,25 +210,15 @@ li a:hover {
 
 .text_container_search_button {
     position: absolute;
-    width: 13%;
-    height: auto;
-}
-
-.text_container_cancel_button {
-    position: absolute;
-    width: 12%;
     height: auto;
 }
 
 .pokemon_value_search {
     background-color: #f44336;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    padding: 9% 76%;
 }
 
-.pokemon_value_cancel {
-    background-color: #f44336;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-}
 
 /* Other Elements */
 

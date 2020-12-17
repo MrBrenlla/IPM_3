@@ -42,9 +42,6 @@
                 <div class="text_container_search_button">
                     <input role="button" class="button pokemon_value_search" type="submit" value="Buscar" />
                 </div>
-                <div class="text_container_cancel_button">
-                    <button role="button" class="button pokemon_value_cancel" onclick="document.getElementById('pokemon_name').value = ''">Cancelar</button>
-                </div>
             </form>
             <img src="images/pokedex.gif" style="max-width:80%;height:auto;" />
             <p style="color:black;">¿No encuentas tú pokemón? - <a href="catalogo.html">Clicka aquí para ir al catálogo</a></p>
@@ -55,7 +52,7 @@
     <!--List of recommended pokemon-->
     <div role="complementary" class="row-2" >
         <div class="col-3 col-s-12">
-            <img src="images/recomendados.png" style="height:auto;max-width:100%;" alt="Poke-Recomendados"/>
+            <img src="images/recomendados.png" style="height:auto;max-width:100%;display:block;margin:auto;" alt="Poke-Recomendados"/>
             <div class="aside" id="recommended_poke"></div>
         </div>
     </div>
@@ -66,7 +63,7 @@
 
         <div class="oak">
             <div style="background-color:white;width:50%;height:100%;transform: translate(50%, 20%);">
-                <p class="oak_advice" id="oak_adv"> Aprovecha la características de intercambio de Pokémon con otros entrenadores.</p>
+                <p class="oak_advice" id="oak_adv" style="text-align:center;"> Aprovecha la características de intercambio de Pokémon con otros entrenadores.</p>
             </div>
             <img src="images/oak.png" style="max-width:14%;height:auto;margin-top:15px;position: relative;left: 80%;" />
         </div>

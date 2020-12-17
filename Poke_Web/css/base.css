@@ -67,6 +67,51 @@
 }
 
 
+@media (min-width: 0px) and (max-width: 250px) {
+    .text_container_search_button {
+        margin-top: 38%;
+        margin-left: 52%;
+    }
+
+    .pokemon_value_search {
+        font-size: 2pt;
+    }
+}
+
+@media (min-width: 200px) and (max-width: 250px) {
+    .text_container_search_button {
+        margin-top: 38%;
+        margin-left: 52%;
+    }
+
+    .pokemon_value_search {
+        font-size: 4pt;
+    }
+
+}
+
+@media (min-width: 250px) and (max-width: 300px) {
+    .text_container_search_button {
+        margin-top: 38%;
+        margin-left: 52%;
+    }
+
+    .pokemon_value_search {
+        font-size: 5pt;
+    }
+}
+
+@media (min-width: 300px) and (max-width: 400px) {
+    .text_container_search_button {
+        margin-top: 41%;
+        margin-left: 54%;
+    }
+
+    .pokemon_value_search {
+        font-size: 6pt;
+    }
+}
+
 /*Less than tablet but more than smartphone*/
 @media (min-width: 530px) and (max-width: 749px) {
     .pokelogo {
@@ -85,23 +130,37 @@
     .pokemon_value_search {
         font-size: 14pt;
     }
+}
 
-    .pokemon_value_cancel {
-        font-size: 14pt;
+@media (max-width: 400px) {
+    .text_container_search_button {
+        width: 13%;
     }
 }
 
-@media (max-width: 550px) {
+@media (min-width:400px) and (max-width: 550px) {
+    .text_container_search_button {
+        width: 14%;
+    }
+
     .pokemon_value {
         font-size: 8pt;
     }
 
     .pokemon_value_search {
-        font-size: 8pt;
+        font-size: 7pt;
     }
 
-    .pokemon_value_cancel {
-        font-size: 8pt;
+    .text_container_search_button {
+        margin-top: 42%;
+        margin-left: 54%;
+    }
+
+}
+
+@media (min-width: 550px) {
+    .text_container_search_button {
+        width: 13%;
     }
 }
 
@@ -119,22 +178,20 @@
     .pokemon_value_search {
         font-size: 14pt;
     }
-
-    .pokemon_value_cancel {
-        font-size: 14pt;
-    }
 }
 
 
 
-@media (max-width: 700px) {
+@media (min-width: 550px) and (max-width: 700px) {
 
     .pokemon_value_search {
-        font-size: 7pt;
+        font-size: 10pt;
     }
+}
 
-    .pokemon_value_cancel {
-        font-size: 7pt;
+@media (min-width: 700px) {
+    .pokemon_value_search {
+        font-size: 14pt;
     }
 }
 
@@ -143,11 +200,7 @@
         font-size: 23pt;
     }
     .pokemon_value_search {
-        font-size: 23pt;
-    }
-
-    .pokemon_value_cancel {
-        font-size: 23pt;
+        font-size: 21pt;
     }
 }
 
@@ -289,29 +342,15 @@
         margin-left: 54%;
     }
 
-    .text_container_cancel_button {
-        padding-top: 39%;
-        margin-left: 69%;
-    }
-
     .pokemon_value_search {
-        font-size: 19pt;
-    }
-
-    .pokemon_value_cancel {
         font-size: 19pt;
     }
 }
 
-@media (max-width: 1700px) {
+@media (min-width: 550px) and (max-width: 1700px) {
     .text_container_search_button {
-        margin-top: 44%;
+        margin-top: 43%;
         margin-left: 56%;
-    }
-
-    .text_container_cancel_button {
-        padding-top: 44%;
-        margin-left: 71%;
     }
 }
 
@@ -408,6 +447,12 @@
     }
 }
 
+@media (min-width: 1400px) {
+    .pokemon_value_search {
+        font-size: 23pt;
+    }
+}
+
 @media (min-width: 1800px) {
 
     .col-3_b {
@@ -426,17 +471,7 @@
         margin-top: 43%;
         margin-left: 56%;
     }
-
-    .text_container_cancel_button {
-        padding-top: 43%;
-        margin-left: 70%;
-    }
-
     .pokemon_value_search {
-        font-size: 19pt;
-    }
-
-    .pokemon_value_cancel {
         font-size: 19pt;
     }
 }
