@@ -4,12 +4,10 @@ var currentGame;
 
 //Wait for website load the page - Important for DOM/dynamic elements
 window.addEventListener('load', function () {
-    var pokemonCount = 649; //Includes 5th generation Pokemon - (Black and White - 2)
-
-    getPokemon_Games(pokemonCount);
-    getPokemon_Recommended(pokemonCount);
+    getPokemon_All(649);
+    getPokemon_Recommended(649);
     changeOak_Advice();
-})
+});
 
 //Wait for element - For Async Calls
 async function rafAsync() {
@@ -27,133 +25,74 @@ async function checkElement(selector) {
     }
 }
 
+
 //Get all pokemon games and create multiple subdivisions (table-column) with images
-async function getPokemon_All(pokemonCount, pokeGames) {
-    var pokemonGame_div;
-    var pokemonGame_pic;
+async function getPokemon_All(pokemonCount) {
 
-    var htmlSite = window.location.href;
+    //Calls for all pokemon in the pokedex to get for him the sprite
+    for (currentPokemon = 1; currentPokemon < pokemonCount + 1; currentPokemon++) {
+		fetch("https://pokeapi.co/api/v2/pokemon/" + currentPokemon)
+            .then(function (response) {
 
-    var currentHtml = htmlSite.substring(
-        htmlSite.lastIndexOf("/") + 1,
-        htmlSite.lastIndexOf(".")
-    );
-
-    if (currentHtml != "pokemon")
-    {
-        for (i = 0; i < pokeGames.length; i++) {
-            pokemonGame_sec = document.createElement('section');
-            pokemonGame_pic = document.createElement('img');
-            pokemonGame_pic.src = "images/" + pokeGames[i].version.name + ".png";
-            pokemonGame_pic.setAttribute('style', 'margin-top: 25px;');
-            pokemonGame_pic.setAttribute('class', "pokeGame_pic");
-            pokemonGame_pic.setAttribute('id', "pokeGame_pic_" + pokeGames[i].version.name);
-            pokemonGame_pic.setAttribute('style', 'display: none;');
-			pokemonGame_pic.setAttribute('alt', 'Pokemons de pokemon edición '+pokeGames[i].version.name);
-            pokemonGame_sec.setAttribute('id', pokeGames[i].version.name);
-            pokemonGame_sec.setAttribute('class', pokeGames[i].version.name);
-            pokemonGame_sec.setAttribute('style', 'margin-top: 25px;display: none;');
-			
-			
-
-            document.getElementById('catalogo').appendChild(pokemonGame_pic);
-            document.getElementById('catalogo').appendChild(pokemonGame_sec);
-        }
-
-        //Calls for all pokemon in the pokedex to get for him the sprite
-        for (currentPokemon = 1; currentPokemon < pokemonCount + 1; currentPokemon++) {
-            fetch("https://pokeapi.co/api/v2/pokemon/" + currentPokemon)
-                .then(function (response) {
-
-                    if (response.status != 200) {
-                        if (response.status == 404) {
+                if (response.status != 200) {
+                    if (response.status == 404) {
                             window.location.href = 'errors/404.html';
-                        }
-                        else if (response.status == 400) {
-                            alert("Bad request : Please, back to HOME page and insert valid data");
-                        }
-                        else {
-                            throw new Error(response.status)
-                        }
                     }
+                    else if (response.status == 400) {
+                        alert("Bad request : Please, back to HOME page and insert valid data");
+                    }
+					else {
+                        throw new Error(response.status)
+                    }
+                }
 
-                    return response.json();
-                })
-                .then(function (myJson) {
-                    addPokemon_Sprite(myJson.sprites.front_default, myJson.game_indices, myJson.id, myJson.name);
-                })
-                .catch(function (error) {
-                    console.log("Error: " + error);
-                });
-        }
+                return response.json();
+            })
+            .then(function (myJson) {
+                addPokemon_Sprite(myJson.sprites.front_default, myJson.game_indices[0].version.name, myJson.name);
+            })
+            .catch(function (error) {
+                console.log("Error: " + error);
+            });
     }
     
 }
 
-//Get all pokemons games string's
-async function getPokemon_Games(pokemonCount) {
-    fetch("https://pokeapi.co/api/v2/pokemon/" + "pikachu") //Pikachu will be in all Pokemon Games
-        .then(function (response) {
-
-            if (response.status != 200) {
-                if (response.status == 404) {
-                    window.location.href = 'errors/404.html';
-                }
-                else if (response.status == 400) {
-                    alert("Bad request : Please, back to HOME page and insert valid data");
-                }
-                else {
-                    throw new Error(response.status)
-                }
-            }
-
-            return response.json();
-        })
-        .then(function (myJson) {
-
-            getPokemon_All(pokemonCount,myJson.game_indices); 
-        })
-        .catch(function (error) {
-            console.log("Error: " + error);
-        });
+function GameToGen(game){
+	switch(game){
+		case "red": case "blue": case "yellow": return 1; break;
+		
+		case "gold": case "silver": case "crystal": return 2; break;
+		
+		case "leafgreen": case "firered": case "ruby": case "sapphire": case "emerald": return 3; break;
+		
+		case "heartgold": case "soulsilver": case "diamond": case "pearl": case "platinum": return 4; break;
+		
+		case "white": case "white-2":case "black": case "black-2": return 5; break;
+	}
 }
 
 //Add sprite current pokemon to website
-async function addPokemon_Sprite(image, games, currentPokemon, name) {
+async function addPokemon_Sprite(image, game, name) {
 
     var sprite;
     var link;
 
-    for (game = games.length-1; game < games.length; game++) { //<- Check if all PokemonGame_divs are created: checking the last one - white-2
+    link = document.createElement('a');
+    link.setAttribute("href", "pokemon.html?poke_name=" + name);
+    link.setAttribute("id",name);
+	
+    sprite = document.createElement('img');
+    sprite.src = image.toString();
+    sprite.setAttribute("class", "pokemon_sprite_catalogo");
+    sprite.setAttribute("id","img_" +name);
+	sprite.setAttribute("alt", name);
+    sprite.setAttribute("style", "border: 2px solid red;border-radius: 2px;border-style: simple;");
+	 
+	
+    document.getElementById("gen_"+GameToGen(game)).appendChild(link);
+    document.getElementById(name).appendChild(sprite);
 
-        checkElement('#' + games[game].version.name) //use whichever selector you want
-            .then((element) => {
-                for (game2 = 0; game2 < games.length; game2++) {
-                    link = document.createElement('a');
-
-                    link.setAttribute("href", "pokemon.html?poke_name=" + currentPokemon);
-                    link.setAttribute("id", game2 +" "+currentPokemon);
-                    sprite = document.createElement('img');
-                    sprite.src = image.toString();
-                    sprite.setAttribute("class", "pokemon_sprite_catalogo" + currentPokemon);
-                    sprite.setAttribute("id", "pokemon_" + game2 +"_"+ currentPokemon);
-					sprite.setAttribute("alt", name);
-                    sprite.setAttribute("style", "border: 2px solid red;border-radius: 2px;border-style: simple;");
-                    document.getElementById(games[game2].version.name).appendChild(link);
-                    document.getElementById(game2 + " " + currentPokemon).appendChild(sprite);
-                }
-            });
-    }
-
-
-    checkElement('#' + "pokemon_3_" + "649") //use whichever selector you want
-        .then((element) => {
-            document.getElementById("load").setAttribute("style", "display:none");
-            for (i = 0; i < games.length; i++) {
-                document.getElementById("pokeGame_pic_" + games[i].version.name.toString()).setAttribute("style", "display:box");
-                document.getElementById(games[i].version.name.toString()).setAttribute("style", "margin-top: 25px;display:box");
-            }
-        });
 }
 
 //Add pokemons games to website

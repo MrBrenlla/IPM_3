@@ -320,6 +320,14 @@
         color: #ffffff;
         padding: 15px;
     }
+	
+	.pokemon_sprite_catalogo{
+		width:25%;
+	}
+	
+	.pokeGame_pic {
+		width:25%;
+	}
 }
 
 @media (min-width: 600px) and (max-width: 750px) {
@@ -332,6 +340,15 @@
         color: #ffffff;
         padding: 15px;
     }
+	
+	.pokemon_sprite_catalogo{
+		width:13%;
+	}
+	
+	.pokeGame_pic {
+		width:25%;
+	}
+	
 }
 
 /* For other devices*/
@@ -377,6 +394,10 @@
         /*background-color: #9933cc;*/
         background-image: url(../images/poke_banner.jpg);
     }
+	
+	.pokeGame_pic {
+		width:17%;
+	}
 
 }
 
@@ -445,6 +466,16 @@
     .col-12 {
         width: 100%;
     }
+	
+	.pokemon_sprite_catalogo{
+		width:10%;
+	}
+}
+
+@media (min-width: 1050px) {
+    .pokemon_sprite_catalogo{
+		width:100px;
+	}
 }
 
 @media (min-width: 1400px) {
