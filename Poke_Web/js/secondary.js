@@ -114,26 +114,6 @@ async function addPokemon_Moves(moves) {
 
 }
 
-// async function addPokemon_Moves(moves) {
-
-    // var move_field;
-	// var txt = "";
-   
-    // for (i = 0; i < moves.length; i++) {
-		
-		// txt = moves[i].move.name.toString() + " ";
-		// move_field = document.createElement('span');
-		// move_field.innerHTML = txt;
-		// move_field.setAttribute("id", "poke_moves");
-		// move_field.setAttribute("class", "pokemon_move");
-
-		// document.getElementById('pokemon_moves_list').appendChild(move_field);
-       
-    // }
-	
-	
-// }
-
 //Get actual pokemon Games (only the games of the actual pokemon)
 async function addPokemon_Games(games) {
 
@@ -142,17 +122,7 @@ async function addPokemon_Games(games) {
 
     var extra_counter = 0;
 
-    for (i = 0; i < games.length; i++) {
-        
-        if (i % 6 == 0)
-        {
-            game_field_separator = document.createElement('div');
-            game_field_separator.setAttribute("id", "game_separator" + i.toString());
-            document.getElementById('pokemon_games_list').appendChild(game_field_separator);
-
-            if (i != 0)
-                extra_counter += 6;
-        }
+    for (i = 0; i < games.length; i++) {    
 
         game_field = document.createElement('img');
         game_field.src = checkPokemonGame_Name(games[i].version.name.toString());
@@ -160,7 +130,7 @@ async function addPokemon_Games(games) {
         game_field.setAttribute("class", "pokemon_game");
 		game_field.setAttribute("alt", "pokemon " + games[i].version.name);
 
-        document.getElementById('game_separator' + extra_counter).appendChild(game_field);
+        document.getElementById('pokemon_games_list').appendChild(game_field);
     }
 }
 
