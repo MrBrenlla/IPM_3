@@ -29,33 +29,43 @@ async function checkElement(selector) {
 //Get all pokemon games and create multiple subdivisions (table-column) with images
 async function getPokemon_All(pokemonCount) {
 
-    //Calls for all pokemon in the pokedex to get for him the sprite
-    for (currentPokemon = 1; currentPokemon < pokemonCount + 1; currentPokemon++) {
-		fetch("https://pokeapi.co/api/v2/pokemon/" + currentPokemon)
-            .then(function (response) {
+	 var htmlSite = window.location.href;
 
-                if (response.status != 200) {
-                    if (response.status == 404) {
-                            window.location.href = 'errors/404.html';
-                    }
-                    else if (response.status == 400) {
-                        alert("Bad request : Please, back to HOME page and insert valid data");
-                    }
-					else {
-                        throw new Error(response.status)
-                    }
-                }
+    var currentHtml = htmlSite.substring(
+        htmlSite.lastIndexOf("/") + 1,
+        htmlSite.lastIndexOf(".")
+    );
 
-                return response.json();
-            })
-            .then(function (myJson) {
-                addPokemon_Sprite(myJson.sprites.front_default, myJson.game_indices[0].version.name, myJson.name);
-            })
-            .catch(function (error) {
-                console.log("Error: " + error);
-            });
+    if (currentHtml != "pokemon")
+    {
+
+		//Calls for all pokemon in the pokedex to get for him the sprite
+		for (currentPokemon = 1; currentPokemon < pokemonCount + 1; currentPokemon++) {
+			fetch("https://pokeapi.co/api/v2/pokemon/" + currentPokemon)
+				.then(function (response) {
+
+					if (response.status != 200) {
+						if (response.status == 404) {
+								window.location.href = 'errors/404.html';
+						}
+						else if (response.status == 400) {
+							alert("Bad request : Please, back to HOME page and insert valid data");
+						}
+						else {
+							throw new Error(response.status)
+						}
+					}
+
+					return response.json();
+				})
+				.then(function (myJson) {
+					addPokemon_Sprite(myJson.sprites.front_default, myJson.game_indices[0].version.name, myJson.name);
+				})
+				.catch(function (error) {
+					console.log("Error: " + error);
+				});
+		}
     }
-    
 }
 
 function GameToGen(game){
