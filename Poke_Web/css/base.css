@@ -92,23 +92,54 @@
 
 @media (min-width: 250px) and (max-width: 300px) {
     .text_container_search_button {
-        margin-top: 38%;
-        margin-left: 52%;
-    }
-
-    .pokemon_value_search {
-        font-size: 5pt;
-    }
-}
-
-@media (min-width: 300px) and (max-width: 400px) {
-    .text_container_search_button {
-        margin-top: 41%;
-        margin-left: 54%;
+        margin-top: 40%;
+        margin-left: 55%;
     }
 
     .pokemon_value_search {
         font-size: 6pt;
+    }
+
+    .pokemon_value {
+        font-size: 8px;
+        margin-bottom: 1%;
+    }
+
+    .text_container {
+        margin-top: -2%;
+    }
+}
+
+@media (min-width: 300px) and (max-width: 350px) {
+    .text_container_search_button {
+        margin-top: 41%;
+        margin-left: 55%;
+    }
+
+    .pokemon_value_search {
+        font-size: 6pt;
+    }
+
+    .pokemon_value {
+        font-size: 8pt;
+    }
+
+}
+
+
+@media (min-width: 350px) and (max-width: 400px) {
+    .text_container_search_button {
+        margin-top: 41%;
+        margin-left: 56%;
+    }
+
+    .pokemon_value_search {
+        font-size: 7pt;
+    }
+
+
+    .pokemon_value {
+        font-size: 8pt;
     }
 }
 
@@ -156,6 +187,34 @@
         margin-left: 54%;
     }
 
+    .pokedex {
+        padding-left: 1%;
+    }
+
+}
+
+
+@media (min-width:400px) and (max-width: 550px) and (min-height:700px) and (max-height: 720px){
+    .text_container_search_button {
+        width: 13%;
+    }
+
+    .pokemon_value {
+        font-size: 8pt;
+    }
+
+    .pokemon_value_search {
+        font-size:8pt;
+    }
+
+    .text_container_search_button {
+        margin-top: 42%;
+        margin-left: 54%;
+    }
+
+    .pokedex {
+        padding-left: 1%;
+    }
 }
 
 @media (min-width: 550px) {
@@ -163,6 +222,7 @@
         width: 13%;
     }
 }
+
 
 @media (min-width: 100px) and (max-width: 600px) {
 
